@@ -13,7 +13,7 @@
 // When we switch to ESM, we can delete this module.
 import * as Scheduler from 'scheduler';
 
-// 在开头引入 SchedulerMock
+// 修改后：在开头引入 SchedulerMock
 import * as SchedulerMock from 'scheduler/src/forks/SchedulerMock';
 
 export const scheduleCallback = Scheduler.unstable_scheduleCallback;
@@ -32,6 +32,13 @@ export type SchedulerCallback = (isSync: boolean) => SchedulerCallback | null;
 
 // this doesn't actually exist on the scheduler, but it *does*
 // on scheduler/unstable_mock, which we'll need for internal testing
+
+// 修改前
+// export const unstable_yieldValue = Scheduler.unstable_yieldValue;
+// export const unstable_setDisableYieldValue =
+// Scheduler.unstable_setDisableYieldValue;
+
+// 修改后
 export const unstable_yieldValue = SchedulerMock.unstable_yieldValue;
 export const unstable_setDisableYieldValue =
 SchedulerMock.unstable_setDisableYieldValue;

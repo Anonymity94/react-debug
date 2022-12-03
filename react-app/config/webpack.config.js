@@ -49,7 +49,9 @@ const babelRuntimeRegenerator = require.resolve('@babel/runtime/regenerator', {
 const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 
 const emitErrorsAsWarnings = process.env.ESLINT_NO_DEV_ERRORS === 'true';
+// 修改前
 // const disableESLintPlugin = process.env.DISABLE_ESLINT_PLUGIN === 'true';
+// 修改后
 const disableESLintPlugin = true;
 
 const imageInlineSizeLimit = parseInt(
@@ -311,6 +313,7 @@ module.exports = function (webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
+        // 修改前
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         // 'react-native': 'react-native-web',
@@ -320,6 +323,8 @@ module.exports = function (webpackEnv) {
         //   'scheduler/tracing': 'scheduler/tracing-profiling',
         // }),
         // ...(modules.webpackAliases || {}),
+
+        // 修改后
         react: path.join(paths.appSrc, 'react/packages/react'),
         'react-dom': path.join(paths.appSrc, 'react/packages/react-dom'),
         shared: path.join(paths.appSrc, 'react/packages/shared'),

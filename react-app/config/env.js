@@ -97,6 +97,7 @@ function getClientEnvironment(publicUrl) {
       return env;
     }, {}),
 
+    // 修改后
     // 新增配置
     __DEV__: true,
     __EXPERIMENTAL__: true,

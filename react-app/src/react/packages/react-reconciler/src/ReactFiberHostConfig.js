@@ -17,7 +17,8 @@
 // sure that if we *do* accidentally break the configuration,
 // the failure isn't silent.
 
+// 修改前
 // throw new Error('This module must be shimmed by a specific renderer.');
 
-// 加入这段
+// 修改后
 export * from './forks/ReactFiberHostConfig.dom';

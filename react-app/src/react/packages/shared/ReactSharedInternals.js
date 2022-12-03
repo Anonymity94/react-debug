@@ -9,6 +9,7 @@
 
 import * as React from 'react';
 
+// 修改前
 // const ReactSharedInternals =
 //   React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
